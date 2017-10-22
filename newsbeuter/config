@@ -1,0 +1,39 @@
+##############
+# Newsbeuter #
+##############
+auto-reload "yes"
+feed-sort-order "title-dec"
+article-sort-order "date-desc"
+max-downloads "4"
+notify-xterm "yes"
+show-read-feeds "no"
+refresh-on-startup "yes"
+reload-time "20"
+reload-threads "2"
+show-read-feeds "yes"
+oldreader-min-items "100"
+datetime-format "%F"
+max-items "2000"
+keep-articles-days "60"
+show-read-articles "false"
+download-full-page "yes"
+display-article-progress "yes"
+goto-next-feed "no"
+reload-threads "3"
+
+#################
+# External apps #
+#################
+browser "qutebrowser"
+player "mplayer"
+
+##########
+# colors #
+##########		
+#background          		white   black
+#color 	listnormal          	white   
+#color 	listfocus           	yellow  blue   	bold
+#color 	listnormal_unread   	blue	green
+#color 	listfocus_unread    	yellow  black	bold
+#color 	info           		yellow  blue   	bold
+#color 	article       	 	white
