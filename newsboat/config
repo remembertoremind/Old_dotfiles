@@ -1,0 +1,54 @@
+##############
+# Newsbeuter #
+##############
+auto-reload "yes"
+download-path "/home/chansen/Downloads/podcasts"
+feed-sort-order "title-dec"
+article-sort-order "date-desc"
+max-downloads "4"
+notify-xterm "yes"
+notify-screen "yes"
+show-read-feeds "no"
+refresh-on-startup "yes"
+reload-time "20"
+reload-threads "2"
+show-read-feeds "yes"
+oldreader-min-items "100"
+datetime-format "%F"
+max-items "2000"
+keep-articles-days "60"
+show-read-articles "false"
+download-full-page "yes"
+display-article-progress "yes"
+goto-next-feed "no"
+reload-threads "3"
+
+#################
+# External apps #
+#################
+browser "qutebrowser"
+player "mplayer"
+
+##########
+# colors #
+##########		
+#background          		white   black
+#color 	listnormal          	white   
+#color 	listfocus           	yellow  blue   	bold
+#color 	listnormal_unread   	blue	green
+#color 	listfocus_unread    	yellow  black	bold
+#color 	info           		yellow  blue   	bold
+#color 	article       	 	white
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color60  default
+highlight article     "(^Link:.*|^Date:.*)"                 color75  default
+highlight article     "^Podcast Download URL:.*"            color71  default
+highlight article     "^Links:"                             white    color240 underline
+highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
+highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
+highlight article     ":.*\\(link\\)$"                      color74  default
+highlight article     ":.*\\(image\\)$"                     color74  default
+highlight article     ":.*\\(embedded flash\\)$"            color74  default
+color listnormal                                            white    default
+color listfocus                                             default  color240
+color info                                                  default  color240
