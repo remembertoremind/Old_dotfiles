@@ -1,0 +1,237 @@
+# These applications are needed for this config
+# qutebrowser, urxvt, newsboat, ncmpcpp, ranger
+# evince, latex, claws, mutt, unclutter, mpd, feh
+# caprine,
+
+
+############
+# Settings #
+############
+set $mod Mod4
+set $term urxvt
+
+#########
+# Fonts #
+#########
+#font pango:Inconsolata px9
+
+##############
+# Workspaces #
+##############
+
+# Settings
+workspace_auto_back_and_forth yes
+
+# Names
+set $ws1 "1qutebrowser"
+set $ws2 "2terminal"
+set $ws3 "3terminal"
+set $ws4 "4newsboat"
+set $ws5 "5ncmpcpp"
+set $ws6 "6ranger"
+set $ws7 "7evince"
+set $ws8 "8latex"
+set $ws9 "9claws"
+set $ws10 "10mutt"
+
+# Output on dualscreen
+workspace 1 output VGA-1
+workspace 2 output VGA-1
+workspace 3 output VGA-1
+workspace 4 output VGA-1
+workspace 5 output VGA-1
+workspace 6 output VGA-1
+workspace 7 output VGA-1
+workspace 8 output VGA-1
+workspace 9 output VGA-1
+workspace 10 output LVDS-1
+
+# Go to workspace
+$bs $mod+1 workspace $ws1
+$bs $mod+2 workspace $ws2
+$bs $mod+3 workspace $ws3
+$bs $mod+4 workspace $ws4
+$bs $mod+5 workspace $ws5
+$bs $mod+6 workspace $ws6
+$bs $mod+7 workspace $ws7
+$bs $mod+8 workspace $ws8
+$bs $mod+9 workspace $ws9
+$bs $mod+0 workspace $ws10
+
+# Move to workspace
+$bs $mod+Shift+1 move container to workspace $ws1
+$bs $mod+Shift+2 move container to workspace $ws2
+$bs $mod+Shift+3 move container to workspace $ws3
+$bs $mod+Shift+4 move container to workspace $ws4
+$bs $mod+Shift+5 move container to workspace $ws5
+$bs $mod+Shift+6 move container to workspace $ws6
+$bs $mod+Shift+7 move container to workspace $ws7
+$bs $mod+Shift+8 move container to workspace $ws8
+$bs $mod+Shift+9 move container to workspace $ws9
+$bs $mod+Shift+0 move container to workspace $ws10
+
+###############
+# Keybindings #
+###############
+
+# Settings
+set $bs bindsym
+floating_modifier $mod
+
+# Disabled keys
+$bs Next nop
+$bs Prior nop
+
+$bs XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+$bs XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+$bs XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+$bs XF86MonBrightnessDown exec light -U 10
+$bs XF86MonBrightnessUp exec light -A 10
+$bs XF86WLAN nop
+$bs $mod+Return exec $term
+$bs $mod+Shift+Return [instance="dropdown"] scratchpad show; move position center
+
+$bs Shift+Print exec scrot -u -q 100 '%Y-%m-%d-%H.%M.%S-fullscreen.png' -e 'mv $f /home/chansen/Pictures/Screenshots/'
+$bs --release $mod+Print exec scrot -s -q 100 '%Y-%m-%d-%H.%M.%S-crop.png' -e 'mv $f /home/chansen/Pictures/Screenshots/' 
+
+$bs $mod+Shift+space 	floating toggle
+$bs $mod+space 		exec rofi -show run -location 3 -lines 3 -padding 1
+
+$bs $mod+Tab 		workspace next
+$bs $mod+Shift+Tab 	workspace prev
+
+$bs $mod+Escape
+$bs $mod+Shift+Escape	exit
+
+$bs $mod+Delete
+$bs $mod+Shift+Delete	exec i3lock -B=15 --radius 20 
+
+# Arrowkeys
+$bs $mod+Up 		exec mpc toggle
+$bs $mod+Down 		exec mpc stop
+$bs $mod+Left 		exec mpc prev
+$bs $mod+Right 		exec mpc next
+$bs $mod+Shift+Up 	exec mpc volume +10
+$bs $mod+Shift+Down 	exec mpc volume -10
+$bs $mod+Shift+Left 	exec mpc seek -00:00:10
+$bs $mod+Shift+Right 	exec mpc seek +00:00:10
+
+# Keybindings
+$bs $mod+a		arandr
+$bs $mod+Shift+a
+$bs $mod+b
+$bs $mod+Shift+b
+$bs $mod+c 		split toggle
+$bs $mod+Shift+c 	reload
+$bs $mod+d
+$bs $mod+Shift+d
+$bs $mod+e 		exec /home/chansen/Downloads/epidata/manager/manager
+$bs $mod+Shift+e 	exec /home/chansen/Downloads/epidata/client/client
+$bs $mod+f 		fullscreen toggle
+$bs $mod+Shift+f
+$bs $mod+g
+$bs $mod+Shift+g
+$bs $mod+h 		focus left
+$bs $mod+Shift+h 	move left
+$bs $mod+i 
+$bs $mod+Shift+i 	resize grow height 10 px
+$bs $mod+j 		focus down
+$bs $mod+Shift+j 	move down
+$bs $mod+k 		focus up
+$bs $mod+Shift+k 	move up
+$bs $mod+l 		focus right
+$bs $mod+Shift+l 	move right
+$bs $mod+m 		exec $term -e ncmpcpp
+$bs $mod+Shift+m
+$bs $mod+n		$term -e newsboat
+$bs $mod+Shift+n
+$bs $mod+o
+$bs $mod+Shift+o 	resize grow width 10 px
+$bs $mod+p 		exec pavucontrol
+$bs $mod+Shift+p
+$bs $mod+q 		exec qutebrowser
+$bs $mod+Shift+q 	kill
+$bs $mod+r 		exec $term -e ranger
+$bs $mod+Shift+r 	restart
+$bs $mod+s
+$bs $mod+Shift+s
+$bs $mod+t
+$bs $mod+Shift+t
+$bs $mod+u
+$bs $mod+Shift+u 	resize shrink height 10 px
+$bs $mod+v
+$bs $mod+Shift+v
+$bs $mod+x
+$bs $mod+Shift+x
+$bs $mod+y
+$bs $mod+Shift+y 	resize shrink width 10 px
+
+
+#####################
+# i3status settings #
+#####################
+bar 	{
+        status_command i3status
+	position top
+		colors	{		#Border #Backgr	#Text	#Indicator
+		separator		#ff69b4
+		statusline		#fdfefe
+		background		#85929e
+		focused_background	#000000
+		focused_workspace	#ff69b4	#000000	#fdfefe
+#		active_workspace	#000000	#000000	#fdfefe
+		inactive_workspace	#000000	#000000	#fdfefe
+		urgent_workspace	#c0392b	#000000 #fdfefe
+			}
+	}
+
+#################
+# Border Colors #
+#################
+
+# Border colors         border  backgr. text    indicator child_border
+client.focused          #000000 #000000 #000000 #ff69b4   #000000
+client.focused_inactive #000000 #5f676a #ffffff #ff69b4   #000000
+client.unfocused        #000000 #222222 #888888 #ff69b4   #000000
+client.urgent           #ffffff #900000 #ffffff #ff69b4   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #000000
+
+###################
+# Window settings #
+###################
+for_window [class="^.*"] border pixel 2
+for_window [class="Pavucontrol"] floating enable
+for_window [class="(?i)mpv"] floating enable
+for_window [class="mpv"] sticky enable
+for_window [class="Arandr"] floating enable
+for_window [class="Arandr"] resize set 500 500
+for_window [class="KeePass2"] floating enable
+for_window [class="KeePass2"] resize set 500 500
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 1200 600
+for_window [instance="dropdown"] move position center
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] sticky enable
+#for_window [instance="newsboat"] move $ws4
+#for_window [instance="newsboat"] move position up
+#for_window [instance="calcurse"] move $ws4
+#for_window [instance="calcurse"] move position up
+
+################
+# Applications #
+################
+exec_always --no-startup-id exec synclient TouchpadOff=1
+exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.png
+exec_always --no-startup-id mpd
+exec_always --no-startup-id $term -name dropdown -e tmux
+exec_always --no-startup-id unclutter -idle 15
+#exec_always --no-startup-id $term -name -e newsboat
+#exec_always --no-startup-id $term -name -e calcurse
+
+# Assignments
+#assign [class="qutebrowser"] $ws1
+#assign [class="ncmpcpp"] $ws4
+#assign [instance="calcurse"] $ws4
+
