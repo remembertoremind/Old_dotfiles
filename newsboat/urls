@@ -1,0 +1,48 @@
+###########
+# Podcast #
+###########
+https://tools.planetradio.co.uk/core/podcasts/rss.php?name=myrock-podcast "~Podcast  MyRock"
+http://www.dr.dk/mu/Feed/p6-beat-elsker.xml?format=podcast&limit=500 "~Podcast  P6 Beat Elsker"
+
+###########
+#   IT    #
+###########
+http://www.phoronix.com/rss.php "~Linux    Phoronix"
+http://www.theregister.co.uk/software/headlines.atom "~Linux    TheRegister"
+https://newz.dk/rss "~Nyheder  Newz"
+http://feeds.feedburner.com/RockPaperShotgun "~Games    RockPaperShutgun"
+https://www.archlinux.org/feeds/news/ "~Linux    Arch-Linux"
+http://rss.slashdot.org/Slashdot/slashdotMain "~Linux    Slashdot"
+https://www.pcworld.com/index.rss "~Nyheder  PC World"
+https://www.itsfoss.com/rss "~Nyheder  It's FOSS"
+https://www.gamingonlinux.com/article_rss.php "~Linux    Gaming On Linux"
+http://www.osnews.com/files/recent.xml "~Linux    OSnews"
+###########
+#  News   #
+###########
+http://feeds.tv2.dk/politik_seneste/rss "~Nyheder  TV2-Politik"
+http://feeds.tv2.dk/beep_seneste/rss "~Nyheder  TV2-Beep"
+https://hothardware.com/rss/news.aspx "~Hardware HotHardware"
+http://www.tomshardware.com/feeds/rss2/all.xml "~Hardware TomsHardware"
+###########
+#  Games  #
+###########
+https://ludeon.com/blog/feed/ "~Games    Rimworld"
+https://openxcom.org/feed/ "~Games    OpenXcom"
+http://feeds.feedburner.com/openmw "~Games    OpenMW"
+
+###########
+#  Apps   #
+###########
+http://feeds.kodi.tv/xbmc "~Apps     Kodi"
+http://blog.qutebrowser.org/feeds/all.rss.xml "~Apps     Qutebrowser"
+
+###########
+# Youtube #
+###########
+https://www.youtube.com/feeds/videos.xml?user=voxdotcom "~Youtube  Vox"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Youtube  Luke Smith"
+https://www.youtube.com/feeds/videos.xml?user=LateNightSeth "~Youtube  Seth Meyers"
+https://www.youtube.com/feeds/videos.xml?user=gotbletu "~Youtube  Gotbletu"
+https://www.youtube.com/feeds/videos.xml?user=everyframeapainting "~Youtube  Every frame a painting"
+

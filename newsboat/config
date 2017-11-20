@@ -6,18 +6,18 @@ download-path "/home/chansen/Downloads/podcasts"
 feed-sort-order "title-dec"
 article-sort-order "date-desc"
 max-downloads "4"
-notify-xterm "yes"
-notify-screen "yes"
+notify-xterm "no"
+notify-screen "no"
 show-read-feeds "no"
 refresh-on-startup "yes"
 reload-time "20"
 reload-threads "2"
-show-read-feeds "yes"
+show-read-feeds "no"
 oldreader-min-items "100"
 datetime-format "%F"
-max-items "2000"
+max-items "200"
 keep-articles-days "60"
-show-read-articles "false"
+show-read-articles "true"
 download-full-page "yes"
 display-article-progress "yes"
 goto-next-feed "no"
@@ -27,7 +27,7 @@ reload-threads "3"
 # External apps #
 #################
 browser "qutebrowser"
-player "mplayer"
+player "mpv"
 
 ##########
 # colors #
@@ -39,7 +39,7 @@ player "mplayer"
 #color 	listfocus_unread    	yellow  black	bold
 #color 	info           		yellow  blue   	bold
 #color 	article       	 	white
-highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color60  default
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     green    default
 highlight article     "(^Link:.*|^Date:.*)"                 color75  default
 highlight article     "^Podcast Download URL:.*"            color71  default
 highlight article     "^Links:"                             white    color240 underline
@@ -49,6 +49,30 @@ highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bo
 highlight article     ":.*\\(link\\)$"                      color74  default
 highlight article     ":.*\\(image\\)$"                     color74  default
 highlight article     ":.*\\(embedded flash\\)$"            color74  default
-color listnormal                                            white    default
-color listfocus                                             default  color240
+#color listnormal                                            white    default
+#color listfocus                                             default  color240
 color info                                                  default  color240
+
+##############
+# Navigation #
+##############
+bind-key j down
+bind-key k up
+bind-key m toggle-show-read-feeds
+bind-key ^D pageup
+bind-key ^U pagedown
+bind-key / opensearch tagselection
+bind-key i sort
+bind-key I rev-sort
+bind-key g home all
+bind-key G end all
+unbind-key l
+bind-key l open
+bind-key h quit
+#unbind-key SPACE
+#bind-key SPACE next-unread
+#unbind-key n
+unbind-key q
+
+macro p set browser "tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-10 %u"; open-in-browser ; set browser "$BROWSER %u"
+
