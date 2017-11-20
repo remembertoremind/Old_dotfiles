@@ -1,0 +1,76 @@
+#############
+# i3-status #
+#############
+
+# Test = ß
+
+general {
+        colors = true
+	color_good = "#FFFFFF"
+	color_bad = "#ff5050"
+	color_degraded = "#ff8000"
+        interval = 5
+}
+
+order += "volume master"
+order += "disk /"
+order += "wireless _first_"
+order += "battery all"
+order += "cpu_usage"
+order += "tztime local2"
+order += "tztime local"
+
+volume master {
+	format = "vol:%volume"
+	format_muted = "vol:mute"
+	device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo" 
+	min_width = "100"
+	align = "center"
+}
+
+cpu_usage {
+	format = "C %usage"
+	max_threshold = "75"
+	format_above_threshold = "C! %usage"
+	min_width = "100"
+	align = "center"
+}
+
+
+wireless _first_ {
+        format_up = "w:1"
+        format_down = "w:0"
+	min_width = "50"
+	align = "center"
+}
+ 
+battery all {
+        format = "%status %percentage %remaining"
+	hide_seconds = "true"
+	min_width = "100"
+	align = "center"
+	format_down = "bat|no"
+	status_chr = "bat|chr"
+	status_bat = "bat"
+	status_unk = "bat|unk"
+	status_full = "bat|full"
+	integer_battery_capacity = "true"
+}
+
+tztime local {
+        format = "(%a) %H:%M"
+	min_width = "100"
+	align = "center"
+}
+
+tztime local2 {
+	format = "%Y-%b-%d"
+	min_width = "100"
+	align = "center"
+}
+
+disk "/" {
+        format = "~/ %free"
+	align = "center"
+	min_width = "100"
+}
