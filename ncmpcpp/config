@@ -1,0 +1,38 @@
+###########
+# Ncmpcpp #
+###########
+
+# MPD-settings
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = /home/chansen/Music/mp3/
+
+# Player
+autocenter_mode = yes
+centered_cursor = yes
+header_visibility = yes
+statusbar_visibility = yes
+titles_visibility = no
+playlist_disable_highlight_delay = 0
+
+# Progressbar
+progressbar_color = yellow
+progressbar_elapsed_color = white
+progressbar_look = .Co
+
+# Visualizer
+visualizer_type = spectrum
+visualizer_color = blue, yellow, magenta, white
+
+
+
+#follow_now_playing_lyrics = yes
+#ask_before_clearing_playlist = no
+
+#mouse_support = no
+
+#empty_tag_color = red
+#volume_color = green
+
+
+
