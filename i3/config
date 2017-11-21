@@ -59,16 +59,16 @@ $bs $mod+9 workspace $ws9
 $bs $mod+0 workspace $ws10
 
 # Move to workspace
-$bs $mod+Shift+1 move container to workspace $ws1
-$bs $mod+Shift+2 move container to workspace $ws2
-$bs $mod+Shift+3 move container to workspace $ws3
-$bs $mod+Shift+4 move container to workspace $ws4
-$bs $mod+Shift+5 move container to workspace $ws5
-$bs $mod+Shift+6 move container to workspace $ws6
-$bs $mod+Shift+7 move container to workspace $ws7
-$bs $mod+Shift+8 move container to workspace $ws8
-$bs $mod+Shift+9 move container to workspace $ws9
-$bs $mod+Shift+0 move container to workspace $ws10
+$bs $mod+Shift+1 		move container to workspace $ws1
+$bs $mod+Shift+2 		move container to workspace $ws2
+$bs $mod+Shift+3 		move container to workspace $ws3
+$bs $mod+Shift+4 		move container to workspace $ws4
+$bs $mod+Shift+5 		move container to workspace $ws5
+$bs $mod+Shift+6 		move container to workspace $ws6
+$bs $mod+Shift+7 		move container to workspace $ws7
+$bs $mod+Shift+8 		move container to workspace $ws8
+$bs $mod+Shift+9 		move container to workspace $ws9
+$bs $mod+Shift+0 		move container to workspace $ws10
 
 ###############
 # Keybindings #
@@ -79,61 +79,67 @@ set $bs bindsym
 floating_modifier $mod
 
 # Disabled keys
-$bs Next nop
-$bs Prior nop
+$bs Next 			nop
+$bs Prior 			nop
 
 # For Thinkpad X250
-$bs XF86AudioRaiseVolume exec "amixer set Master 5%+" 
-$bs XF86AudioLowerVolume exec "amixer set Master 2%-"
-$bs XF86AudioMute exec "amixer set Master toggle"
+$bs XF86AudioRaiseVolume 	exec "amixer set Master 5%+" 
+$bs XF86AudioLowerVolume 	exec "amixer set Master 2%-"
+$bs XF86AudioMute 		exec "amixer set Master toggle"
 
 # For Thinkpad X230
 #$bs XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
 #$bs XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 #$bs XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-$bs XF86MonBrightnessDown exec light -U 10
-$bs XF86MonBrightnessUp exec light -A 10
+
+# For Thinkpad X250
+$bs XF86MonBrightnessUp 	exec xbacklight -inc 05 
+$bs XF86MonBrightnessDown 	exec xbacklight -dec 05
+
+# For Thinkpad X230
+#$bs XF86MonBrightnessDown 	exec light -U 10
+#$bs XF86MonBrightnessUp 	exec light -A 10
 $bs XF86WLAN nop
-$bs $mod+Return exec $term
-$bs $mod+Shift+Return [instance="dropdown"] scratchpad show; move position center
+$bs $mod+Return 		exec $term
+$bs $mod+Shift+Return 		[instance="dropdown"] scratchpad show; move position center
 
-$bs Shift+Print exec scrot -u -q 100 '%Y-%m-%d-%H.%M.%S-fullscreen.png' -e 'mv $f /home/chansen/Pictures/Screenshots/'
-$bs --release $mod+Print exec scrot -s -q 100 '%Y-%m-%d-%H.%M.%S-crop.png' -e 'mv $f /home/chansen/Pictures/Screenshots/' 
+$bs Shift+Print 		exec scrot -u -q 100 '%Y-%m-%d-%H.%M.%S-fullscreen.png' -e 'mv $f /home/chansen/Pictures/Screenshots/'
+$bs --release $mod+Print 	exec scrot -s -q 100 '%Y-%m-%d-%H.%M.%S-crop.png' -e 'mv $f /home/chansen/Pictures/Screenshots/' 
 
-$bs $mod+space 		exec rofi -show run -location 3 -lines 3 -padding 1
-$bs $mod+Shift+space 	floating toggle
+$bs $mod+space 			exec rofi -show run -location 3 -lines 3 -padding 1
+$bs $mod+Shift+space 		floating toggle
 
-$bs $mod+Tab 		workspace next
-$bs $mod+Shift+Tab 	workspace prev
+$bs $mod+Tab 			workspace next
+$bs $mod+Shift+Tab 		workspace prev
 
 #$bs $mod+Escape
-#$bs $mod+Shift+Escape	Exit
+$bs $mod+Shift+Escape		exit
 
 #$bs $mod+Delete
-$bs $mod+Shift+Delete	exec i3lock -B=15 --radius 20 
+$bs $mod+Shift+Delete		exec i3lock -B=15 --radius 20 
 
 # Arrowkeys
-$bs $mod+Up 		exec mpc toggle
-$bs $mod+Down 		exec mpc stop
-$bs $mod+Left 		exec mpc prev
-$bs $mod+Right 		exec mpc next
-$bs $mod+Shift+Up 	exec mpc volume +10
-$bs $mod+Shift+Down 	exec mpc volume -10
-$bs $mod+Shift+Left 	exec mpc seek -00:00:10
-$bs $mod+Shift+Right 	exec mpc seek +00:00:10
+$bs $mod+Up 			exec mpc toggle
+$bs $mod+Down 			exec mpc stop
+$bs $mod+Left 			exec mpc prev
+$bs $mod+Right 			exec mpc next
+$bs $mod+Shift+Up 		exec mpc volume +10
+$bs $mod+Shift+Down 		exec mpc volume -10
+$bs $mod+Shift+Left 		exec mpc seek -00:00:10
+$bs $mod+Shift+Right 		exec mpc seek +00:00:10
 
 # Keybindings
-$bs $mod+a		arandr
+$bs $mod+a			arandr
 #$bs $mod+Shift+a
 #$bs $mod+b
 #$bs $mod+Shift+b
-$bs $mod+c 		split toggle
-$bs $mod+Shift+c 	reload
-$bs $mod+d		exec dmenu_run -b -l 10 -nf magenta
+$bs $mod+c 			split toggle
+$bs $mod+Shift+c 		reload
+$bs $mod+d			exec dmenu_run -b -l 10 -nf magenta
 #$bs $mod+Shift+d
-$bs $mod+e 		exec /home/chansen/Downloads/epidata/manager/manager
-$bs $mod+Shift+e 	exec /home/chansen/Downloads/epidata/client/client
-$bs $mod+f 		fullscreen toggle
+$bs $mod+e 			exec /home/chansen/Downloads/epidata/manager/manager
+$bs $mod+Shift+e 		exec /home/chansen/Downloads/epidata/client/client
+$bs $mod+f 			fullscreen toggle
 #$bs $mod+Shift+f
 #$bs $mod+g
 #$bs $mod+Shift+g
