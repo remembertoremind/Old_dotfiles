@@ -23,7 +23,10 @@ order += "tztime local"
 volume master {
 	format = "vol:%volume"
 	format_muted = "vol:mute"
-	device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo" 
+# The line below works for my Thinkpad X230
+#	device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo" 
+# The line below works for my Thinkpad X250
+	device = "pulse"
 	min_width = "100"
 	align = "center"
 }
