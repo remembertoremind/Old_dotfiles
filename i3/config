@@ -82,9 +82,15 @@ floating_modifier $mod
 $bs Next nop
 $bs Prior nop
 
-$bs XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
-$bs XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-$bs XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# For Thinkpad X250
+$bs XF86AudioRaiseVolume exec "amixer set Master 5%+" 
+$bs XF86AudioLowerVolume exec "amixer set Master 2%-"
+$bs XF86AudioMute exec "amixer set Master toggle"
+
+# For Thinkpad X230
+#$bs XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+#$bs XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+#$bs XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 $bs XF86MonBrightnessDown exec light -U 10
 $bs XF86MonBrightnessUp exec light -A 10
 $bs XF86WLAN nop
