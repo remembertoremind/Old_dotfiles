@@ -94,16 +94,16 @@ $bs $mod+Shift+Return [instance="dropdown"] scratchpad show; move position cente
 $bs Shift+Print exec scrot -u -q 100 '%Y-%m-%d-%H.%M.%S-fullscreen.png' -e 'mv $f /home/chansen/Pictures/Screenshots/'
 $bs --release $mod+Print exec scrot -s -q 100 '%Y-%m-%d-%H.%M.%S-crop.png' -e 'mv $f /home/chansen/Pictures/Screenshots/' 
 
-$bs $mod+Shift+space 	floating toggle
 $bs $mod+space 		exec rofi -show run -location 3 -lines 3 -padding 1
+$bs $mod+Shift+space 	floating toggle
 
 $bs $mod+Tab 		workspace next
 $bs $mod+Shift+Tab 	workspace prev
 
-$bs $mod+Escape
-$bs $mod+Shift+Escape	exit
+#$bs $mod+Escape
+#$bs $mod+Shift+Escape	Exit
 
-$bs $mod+Delete
+#$bs $mod+Delete
 $bs $mod+Shift+Delete	exec i3lock -B=15 --radius 20 
 
 # Arrowkeys
@@ -118,22 +118,22 @@ $bs $mod+Shift+Right 	exec mpc seek +00:00:10
 
 # Keybindings
 $bs $mod+a		arandr
-$bs $mod+Shift+a
-$bs $mod+b
-$bs $mod+Shift+b
+#$bs $mod+Shift+a
+#$bs $mod+b
+#$bs $mod+Shift+b
 $bs $mod+c 		split toggle
 $bs $mod+Shift+c 	reload
-$bs $mod+d
-$bs $mod+Shift+d
+$bs $mod+d		exec dmenu_run -b -l 10 -nf magenta
+#$bs $mod+Shift+d
 $bs $mod+e 		exec /home/chansen/Downloads/epidata/manager/manager
 $bs $mod+Shift+e 	exec /home/chansen/Downloads/epidata/client/client
 $bs $mod+f 		fullscreen toggle
-$bs $mod+Shift+f
-$bs $mod+g
-$bs $mod+Shift+g
+#$bs $mod+Shift+f
+#$bs $mod+g
+#$bs $mod+Shift+g
 $bs $mod+h 		focus left
 $bs $mod+Shift+h 	move left
-$bs $mod+i 
+#$bs $mod+i 
 $bs $mod+Shift+i 	resize grow height 10 px
 $bs $mod+j 		focus down
 $bs $mod+Shift+j 	move down
@@ -142,28 +142,28 @@ $bs $mod+Shift+k 	move up
 $bs $mod+l 		focus right
 $bs $mod+Shift+l 	move right
 $bs $mod+m 		exec $term -e ncmpcpp
-$bs $mod+Shift+m
+#$bs $mod+Shift+m
 $bs $mod+n		$term -e newsboat
-$bs $mod+Shift+n
-$bs $mod+o
+#$bs $mod+Shift+n
+#$bs $mod+o
 $bs $mod+Shift+o 	resize grow width 10 px
 $bs $mod+p 		exec pavucontrol
-$bs $mod+Shift+p
+#$bs $mod+Shift+p
 $bs $mod+q 		exec qutebrowser
 $bs $mod+Shift+q 	kill
 $bs $mod+r 		exec $term -e ranger
 $bs $mod+Shift+r 	restart
-$bs $mod+s
-$bs $mod+Shift+s
-$bs $mod+t
-$bs $mod+Shift+t
-$bs $mod+u
+#$bs $mod+s
+#$bs $mod+Shift+s
+#$bs $mod+t
+#$bs $mod+Shift+t
+#$bs $mod+u
 $bs $mod+Shift+u 	resize shrink height 10 px
-$bs $mod+v
-$bs $mod+Shift+v
-$bs $mod+x
-$bs $mod+Shift+x
-$bs $mod+y
+#$bs $mod+v
+#$bs $mod+Shift+v
+#$bs $mod+x
+#$bs $mod+Shift+x
+#$bs $mod+y
 $bs $mod+Shift+y 	resize shrink width 10 px
 
 
@@ -225,7 +225,7 @@ exec_always --no-startup-id exec synclient TouchpadOff=1
 exec_always --no-startup-id setxkbmap -option caps:escape
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.png
 exec_always --no-startup-id mpd
-exec_always --no-startup-id $term -name dropdown -e tmux
+exec --no-startup-id $term -name dropdown -e tmux
 exec_always --no-startup-id unclutter -idle 15
 #exec_always --no-startup-id $term -name -e newsboat
 #exec_always --no-startup-id $term -name -e calcurse
